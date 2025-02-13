@@ -1,16 +1,49 @@
-# bondtime_app
+Set Up the Local Development Environment
+Each member should clone the repository to their local system:
 
-A new Flutter project.
+bash
+Copy
+Edit
+git clone https://github.com/your-username/BondTime.git
+cd BondTime
+Then, initialize and install dependencies:
 
-## Getting Started
+bash
+Copy
+Edit
+flutter pub get
+4️⃣ Create a Branching Strategy
+To maintain an organized workflow, follow these branching rules:
 
-This project is a starting point for a Flutter application.
+main branch: Production-ready, stable code (Only you merge here).
+develop branch: Ongoing development (Team pushes here).
+Feature branches: Team members create feature branches and merge into develop.
+Branch naming convention:
 
-A few resources to get you started if this is your first Flutter project:
+bash
+Copy
+Edit
+feature/<feature-name>  # for new features
+bugfix/<issue-name>  # for fixing bugs
+Example:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+bash
+Copy
+Edit
+git checkout -b feature/login-screen
+5️⃣ Push Changes & Open a Pull Request (PR)
+Each developer will:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Work on their branch, commit changes, and push to GitHub:
+
+bash
+Copy
+Edit
+git add .
+git commit -m "Added login screen UI"
+git push origin feature/login-screen
+Go to GitHub, open the repository, and click "Compare & pull request".
+
+Assign the PR to you and add team members as reviewers.
+
+You review and merge only if the code is correct.
