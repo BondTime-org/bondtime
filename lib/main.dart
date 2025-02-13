@@ -6,6 +6,8 @@ void main() {
 }
 
 class BondTimeApp extends StatelessWidget {
+  const BondTimeApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

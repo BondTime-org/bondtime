@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DevelopmentScreen extends StatefulWidget {
+  const DevelopmentScreen({super.key});
+
   @override
   _DevelopmentScreenState createState() => _DevelopmentScreenState();
 }
@@ -32,34 +34,36 @@ class _DevelopmentScreenState extends State<DevelopmentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFFFBF5), // Light beige background
+      backgroundColor: const Color(0xFFFFFBF5), // Light beige background
       appBar: AppBar(
-        title: Text("Back", style: TextStyle(color: Colors.grey)),
+        title: const Text("Back", style: TextStyle(color: Colors.grey)),
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.grey),
+        iconTheme: const IconThemeData(color: Colors.grey),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               "Let’s get to know Emma a bit better!",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               "Which areas of your child’s development would you like to focus on?",
               style: TextStyle(fontSize: 16),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30),
             Expanded(
               child: ListView(
                 children: options.keys.map((key) {
-                  int index = options.keys.toList().indexOf(key); // Index of the option
-                  bool isSelected = options[key]!; // Whether the option is selected
+                  int index =
+                      options.keys.toList().indexOf(key); // Index of the option
+                  bool isSelected =
+                      options[key]!; // Whether the option is selected
 
                   return GestureDetector(
                     onTap: () {
@@ -78,8 +82,10 @@ class _DevelopmentScreenState extends State<DevelopmentScreen> {
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
                           color: isSelected
-                              ? selectedTextColors[index] // Border matches the selected color
-                              : Colors.grey.shade300, // Grey border for deselected
+                              ? selectedTextColors[
+                                  index] // Border matches the selected color
+                              : Colors
+                                  .grey.shade300, // Grey border for deselected
                         ),
                       ),
                       child: Text(
@@ -97,7 +103,7 @@ class _DevelopmentScreenState extends State<DevelopmentScreen> {
                 }).toList(),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             ElevatedButton(
               onPressed: options.containsValue(true)
                   ? () {
@@ -109,7 +115,7 @@ class _DevelopmentScreenState extends State<DevelopmentScreen> {
                 backgroundColor: options.containsValue(true)
                     ? Colors.black // Black when active
                     : Colors.grey.shade300, // Grey when disabled
-                minimumSize: Size(double.infinity, 50),
+                minimumSize: const Size(double.infinity, 50),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8), // Adjusted radius
                 ),
@@ -124,8 +130,8 @@ class _DevelopmentScreenState extends State<DevelopmentScreen> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               "We collect your data to personalize activities and track growth, ensuring a secure and enhanced experience.",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 12, color: Colors.grey),
